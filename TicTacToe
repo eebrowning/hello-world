@@ -1,0 +1,32 @@
+
+///tic tac toe////
+var turn = "X";
+var lattice =[["_","_","_"],
+              ["_","_","_"],
+              ["_","_","_"]];
+
+function ex(row, col){
+  if ( row < 1 || row > 3){console.log( "Invalid Move")}
+
+if( col< 1 || col > 3){console.log( "Invalid Move")}
+
+  if(lattice[row - 1][col-1] == "_" ){lattice[row - 1][col-1] = "X" }
+  else {console.log( "Invalid Move")};//-1 for zero index, easier for players
+  turn = "O";//for tracking turns later
+
+  return lattice[0]+"\n"+lattice[1]+"\n" +lattice[2]+"\nYour move, O";
+};
+
+function oh(row, col){
+  if ( row < 1 || row > 3){console.log( "Invalid Move")};
+  if( col< 1 || col > 3){console.log( "Invalid Move")};
+  if(lattice[row - 1][col-1] == "_" ){lattice[row - 1][col-1] = "O" }
+  //-1 for zero index, easier for players
+  else {console.log( "Invalid Move")};
+  turn = "X";//for tracking turns later
+
+  return lattice[0]+"\n"+lattice[1]+"\n" +lattice[2]+"\nYour move, X";
+
+
+};
+console.log( ex(1,1) );
